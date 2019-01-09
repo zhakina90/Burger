@@ -1,18 +1,13 @@
 const db = require("../models");
 module.exports = function (app) {
-    // var express = require("express");
 
-    // var router = express.Router();
-    // var burger = require("../models");
-
-    // get route -> index
     app.get("/", function (req, res) {
         res.redirect("/burgers");
     });
 
 
     app.get("/burgers", function (req, res) {
-        // express callback response by calling burger.selectAllBurger
+
         db.Burger.findAll(
 
         ).then(function (data) {
@@ -32,14 +27,12 @@ module.exports = function (app) {
             name: req.body.burger_name,
             devoured: false
         }).then(function (result) {
-            // wrapper for orm.js that using MySQL insert callback will return a log to console,
-            // render back to index with handle
+
             console.log(result);
             res.redirect("/");
         });
     });
 
-    // put route -> back to index
     app.put("/burgers/update/:id", function (req, res) {
         db.Burger.update({
             devoured: true
@@ -51,7 +44,7 @@ module.exports = function (app) {
             }).then(function (result) {
 
                 console.log(result);
-                // Send back response and let page reload from .then in Ajax
+
                 res.json("/");
             });
     });
