@@ -21,12 +21,13 @@ app.engine("handlebars", exphbs({ defaultLayout: "main" }));
 app.set("view engine", "handlebars");
 // Routes
 // =============================================================
-var apiRoute = require("./routes/api-routes.js");
+apiRoute = require("./routes/api-routes.js")(app);
 // Syncing our sequelize models and then starting our Express app
 // =============================================================
 
 db.sequelize.sync().then(function () {
     app.listen(PORT, function () {
-        console.log("Server listening on: http://localhost:" + PORT);
+        console.log("==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.", PORT, PORT);
+
     });
 });

@@ -7,7 +7,7 @@ module.exports = function (sequelize, DataTypes) {
             }
         },
         devoured: {
-            type: DataTypes.STRING,
+            type: DataTypes.BOOLEAN,
         }
 
     });

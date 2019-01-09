@@ -1,11 +1,12 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-12 text-center" id="top-bar">
-			<img src="../public/assets/images/burger.png" alt="burger" />
+			<img src="/assets/images/burger.png" alt="burger" />
 			<h1> Eat-Da-Burger! </h1>
 		</div>
-		<div class="col-sm-6 text-center" class="task">
-			<div class="row">
+		<div class="row">
+			<div class="col-sm-6 text-center" class="task">
+
 				{{#each burgers}}
 				{{#unless this.devoured}}
 				<div class="col-sm-9 text-center">
@@ -44,4 +45,16 @@
 			<p>Enter a burger you want to eat Click the "Submit" button.</p>
 		</div>
 	</div>
+</div>
+<div class="col-md-4" id="devoured">
+	<h2 id="devoured-h">Devoured</h2>
+	{{#each burgers}}
+	{{#if this.devoured}}
+	<p class="p-devoured">{{this.id}}. {{this.burger_name}}</p>
+	{{/if}}
+	{{/each}}
+</div>
+
+<div class="col-md-1"></div>
+
 </div>
