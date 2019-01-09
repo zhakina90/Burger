@@ -1,8 +1,8 @@
-module.exports = function (app) {
-    app.get("/", function (req, res) {
-        res.render("index");
-    });
-    app.get("/burgers/create", function (req, res) {
-        res.render("");
-    });
-}
+// module.exports = function (app) {
+//     app.get("/", function (req, res) {
+//         res.render("index");
+//     });
+//     app.get("/burgers/create", function (req, res) {
+//         res.render("");
+//     });
+// }
